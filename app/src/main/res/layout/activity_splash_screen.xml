@@ -14,7 +14,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="199dp"
+        android:layout_marginEnd="190dp"
         android:layout_marginBottom="-2dp"
         android:text="Binary"
         android:textColor="#04B8EF"
@@ -28,11 +28,11 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="3dp"
-        android:layout_marginEnd="141dp"
+        android:layout_marginEnd="132dp"
         android:text="Brink"
         android:textColor="#04B8EF"
         android:textSize="25dp" />
-    
+
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="200dp"
         android:layout_height="200dp"

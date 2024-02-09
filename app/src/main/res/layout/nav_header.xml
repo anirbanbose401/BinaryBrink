@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/profile2" />
+            android:src="@drawable/profile_photo" />
 
     </androidx.cardview.widget.CardView>
 
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewName"
-        android:text="Anirban Bose"
+        android:text="username"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textViewEmail"
-        android:text="anirbanbose401@gmail.com"
+        android:text="email@gmail.com"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="16dp"/>
