@@ -1,7 +1,11 @@
 package com.example.binarybrink;
+
+import android.location.Location;
+
 public class HelperClass {
 
     String name, email, username, password;
+    double latitude, longitude;
 
     public String getName() {
         return name;
@@ -35,11 +39,21 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String name, String email, String username, String password) {
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public HelperClass(String name, String email, String username, String password,double latitude, double longitude) {
         this.name = name;
         this.email = email;
         this.username = username;
         this.password = password;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public HelperClass() {

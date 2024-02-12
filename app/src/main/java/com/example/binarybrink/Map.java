@@ -123,7 +123,7 @@ public class Map extends AppCompatActivity {
                 if(location != null)
                 {
                     //When location is not equal to null
-                    //get current latitude
+                    //get current latitude                   // fetch  // fetch  // fetch  // fetch  // fetch
                     currentLat = location.getLatitude();
                     //get current longitude
                     currentLong = location.getLongitude();

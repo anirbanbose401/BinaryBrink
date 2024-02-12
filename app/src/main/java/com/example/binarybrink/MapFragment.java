@@ -1,9 +1,7 @@
 package com.example.binarybrink;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -21,12 +20,16 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MapFragment extends Fragment {
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    private DatabaseReference reference;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,13 +43,6 @@ public class MapFragment extends Fragment {
             public void onMapReady(@NonNull GoogleMap map) {
                 googleMap = map;
                 requestLocationPermission();
-                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-                    @Override
-                    public void onMapClick(@NonNull LatLng latLng) {
-                        Intent intent = new Intent(getActivity(), Map.class);
-                        startActivity(intent);
-                    }
-                });
             }
         });
 
@@ -85,6 +81,30 @@ public class MapFragment extends Fragment {
                     if (location != null) {
                         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+
+                        // Update the location in the database
+                        updateLocationInDatabase(location.getLatitude(), location.getLongitude());
+                    }
+                });
+    }
+
+    private void updateLocationInDatabase(double latitude, double longitude) {
+
+        String username = getActivity().getIntent().getStringExtra("username");
+
+        reference = FirebaseDatabase.getInstance().getReference("users").child(username);
+        reference.child("latitude").setValue(latitude);
+        reference.child("longitude").setValue(longitude)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getActivity(), "Location updated successfully", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Failed to update location", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
