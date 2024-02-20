@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#010C15"
     tools:context=".SplashScreen">
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_marginEnd="190dp"
         android:layout_marginBottom="-2dp"
         android:text="Binary"
-        android:textColor="#04B8EF"
+        android:textColor="@color/white"
         android:textSize="25dp" />
 
     <TextView
@@ -30,15 +30,15 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="132dp"
         android:text="Brink"
-        android:textColor="#04B8EF"
+        android:textColor="@color/white"
         android:textSize="25dp" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        app:lottie_autoPlay="true"
-        android:id="@+id/lottie"
         android:elevation="5dp"
-        app:lottie_rawRes="@raw/ev_logo"/>
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/ev_logo" />
 </RelativeLayout>

@@ -228,7 +228,7 @@ public class Map extends AppCompatActivity {
 
         @Override
         protected List<HashMap<String, String>> doInBackground(String... strings) {
-            //Create jason parser class
+            //Creating jason parser class object
             JsonParser jsonParser = new JsonParser();
             //Initialize hash map list
             List<HashMap<String,String>> mapList = null;

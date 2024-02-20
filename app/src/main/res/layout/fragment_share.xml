@@ -12,6 +12,6 @@
         android:text="Share"
         android:gravity="center"
         android:textSize="30dp"
-        android:textColor="#04B8EF"/>
+        android:textColor="@color/icon"/>
 
 </FrameLayout>

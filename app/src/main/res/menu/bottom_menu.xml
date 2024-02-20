@@ -19,7 +19,7 @@
 
     <item
         android:id="@+id/add_location"
-        android:title="add location"
+        android:title="Timeline"
         android:icon="@drawable/baseline_add_location_24"/>
     <item
         android:id="@+id/profile"

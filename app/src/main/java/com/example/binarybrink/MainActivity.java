@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     openFragment(new VehicleFragment());
                     return true;
                 }else if (itemId == R.id.add_location) {
-                    openFragment(new AddLocationFragment());
+                    openFragment(new TimelineFragment());
                     return true;
                 }else if (itemId == R.id.profile) {
                     Intent intent = getIntent();

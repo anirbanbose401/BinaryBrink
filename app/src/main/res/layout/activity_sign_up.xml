@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background"
-    tools:context=".SignUpActivity">
+    android:background="#010C15"
+    tools:context=".SignupActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:padding="24dp"
-            android:background="@drawable/black_background">
+            android:background="@color/icon">
 
             <TextView
                 android:layout_width="match_parent"
@@ -32,13 +32,13 @@
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="#04B8EF"/>
+                android:textColor="@color/white"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_name"
-                android:background="@drawable/blue_border"
+                android:background="@drawable/white_border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
                 android:hint="Name"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_email"
-                android:background="@drawable/blue_border"
+                android:background="@drawable/white_border"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Email"
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_username"
-                android:background="@drawable/blue_border"
+                android:background="@drawable/white_border"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Username"
@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/signup_password"
-                android:background="@drawable/blue_border"
+                android:background="@drawable/white_border"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Password"
@@ -94,8 +94,9 @@
                 android:text="Sign Up"
                 android:id="@+id/signup_button"
                 android:textSize="18sp"
+                android:textColor="@color/icon"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#04B8EF"
+                android:backgroundTint="@color/white"
                 app:cornerRadius = "20dp"/>
 
             <TextView
@@ -106,7 +107,7 @@
                 android:layout_gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
-                android:textColor="#04B8EF"
+                android:textColor="@color/white"
                 android:textSize="18sp"/>
 
         </LinearLayout>

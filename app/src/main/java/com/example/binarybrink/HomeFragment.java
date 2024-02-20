@@ -1,5 +1,6 @@
 package com.example.binarybrink;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -21,6 +22,8 @@ public class HomeFragment extends Fragment {
     private HorizontalScrollView newsScrollView;
     private HorizontalScrollView newsScrollView1;
     private Handler handler;
+    private CardView battery, Charging, ChargingStationsVisited;
+
     private final long SCROLL_DELAY = 5000;
 
     public HomeFragment() {}
@@ -38,6 +41,33 @@ public class HomeFragment extends Fragment {
 
         newsLayout = rootView.findViewById(R.id.news);
         newsLayout1 = rootView.findViewById(R.id.news1);
+        battery = rootView.findViewById(R.id.cardBattery);
+        Charging = rootView.findViewById(R.id.cardCharging);
+        ChargingStationsVisited = rootView.findViewById(R.id.cardChargingStationsVisited);
+
+        battery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), BatteryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ChargingStationsVisited.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChargingStationsVisitedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Charging.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChargeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         addNewsItem(newsLayout, "Breaking News 1", "This is the first breaking news.", 1040, 400);
         addNewsItem(newsLayout, "Breaking News 2", "This is the second breaking news.", 1040, 400);
@@ -64,7 +94,8 @@ public class HomeFragment extends Fragment {
         );
         layoutParams.setMargins(16, 16, 16, 16);
         cardView.setLayoutParams(layoutParams);
-        cardView.setCardBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+        cardView.setCardBackgroundColor(getResources().getColor(android.R.color.black));
+        //cardView.setCardBackgroundColor(Color.parseColor("#FF0D1823"));
         cardView.setRadius(8);
 
         TextView textView = new TextView(getContext());

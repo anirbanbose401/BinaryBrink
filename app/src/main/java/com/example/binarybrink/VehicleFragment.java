@@ -39,7 +39,7 @@ public class VehicleFragment extends Fragment {
         );
         layoutParams.setMargins(16, 16, 16, 16);
         cardView.setLayoutParams(layoutParams);
-        cardView.setCardBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
+        cardView.setCardBackgroundColor(getResources().getColor(android.R.color.black));
         cardView.setRadius(30);
 
         LinearLayout innerLayout = new LinearLayout(requireContext());

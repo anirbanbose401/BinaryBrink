@@ -1,6 +1,7 @@
 package com.example.binarybrink;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -43,6 +44,14 @@ public class MapFragment extends Fragment {
             public void onMapReady(@NonNull GoogleMap map) {
                 googleMap = map;
                 requestLocationPermission();
+
+                googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(@NonNull LatLng latLng) {
+                        Intent intent = new Intent(getActivity(), Map.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
 
