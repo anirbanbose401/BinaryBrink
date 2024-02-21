@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
     private HorizontalScrollView newsScrollView;
     private HorizontalScrollView newsScrollView1;
     private Handler handler;
-    private CardView battery, Charging, ChargingStationsVisited;
+    private CardView battery, Charging, ChargingStationsVisited,Transactions ;
 
     private final long SCROLL_DELAY = 5000;
 
@@ -44,6 +44,7 @@ public class HomeFragment extends Fragment {
         battery = rootView.findViewById(R.id.cardBattery);
         Charging = rootView.findViewById(R.id.cardCharging);
         ChargingStationsVisited = rootView.findViewById(R.id.cardChargingStationsVisited);
+        Transactions = rootView.findViewById(R.id.cardTransactions);
 
         battery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +69,15 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        Transactions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), TransactionsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         addNewsItem(newsLayout, "Breaking News 1", "This is the first breaking news.", 1040, 400);
         addNewsItem(newsLayout, "Breaking News 2", "This is the second breaking news.", 1040, 400);

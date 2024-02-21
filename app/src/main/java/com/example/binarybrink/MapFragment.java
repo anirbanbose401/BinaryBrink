@@ -49,6 +49,7 @@ public class MapFragment extends Fragment {
                     @Override
                     public void onMapClick(@NonNull LatLng latLng) {
                         Intent intent = new Intent(getActivity(), Map.class);
+                        //Intent intent = new Intent(getActivity(), WebViewActivity.class);
                         startActivity(intent);
                     }
                 });
